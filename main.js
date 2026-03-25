@@ -1,241 +1,270 @@
-/* ========================================
-   ULTANGBER WEBSITE - MAIN JAVASCRIPT
-   Fixed: Language toggle & navbar issues
-======================================== */
+/* ═══════════════════════════════════════════════════
+   ULTANGBER — main.js
+   All interactivity, animations & language logic
+   ═══════════════════════════════════════════════════ */
 
-// Wait for DOM to load
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // ===== LANGUAGE TOGGLE - FIXED =====
-    const langBtn = document.getElementById('langToggleBtn');
-    const langFlag = document.getElementById('langBtnFlag');
-    let currentLang = localStorage.getItem('ultangber-lang') || 'ms';
-    
-    // Set initial language
-    document.body.classList.add(`lang-${currentLang}`);
-    updateLangButton(currentLang);
-    
-    // Language toggle event
-    if (langBtn) {
-        langBtn.addEventListener('click', function() {
-            // Toggle language
-            currentLang = currentLang === 'ms' ? 'en' : 'ms';
-            
-            // Update body class
-            document.body.classList.remove('lang-ms', 'lang-en');
-            document.body.classList.add(`lang-${currentLang}`);
-            
-            // Update button display
-            updateLangButton(currentLang);
-            
-            // Save preference
-            localStorage.setItem('ultangber-lang', currentLang);
-            
-            // Update page title
-            updatePageTitle(currentLang);
-        });
-    }
-    
-    function updateLangButton(lang) {
-        if (!langFlag) return;
+(function () {
+    'use strict';
+
+    /* ── LANGUAGE TOGGLE ──────────────────────────── */
+    const STORAGE_KEY = 'ultangber_lang';
+    const btn      = document.getElementById('langToggleBtn');
+    const btnFlag  = document.getElementById('langBtnFlag');
+    const htmlEl   = document.documentElement;
+    let currentLang = localStorage.getItem(STORAGE_KEY) || 'ms';
+
+    function applyLang(lang) {
+        console.log('Applying language:', lang);
+        currentLang = lang;
+        localStorage.setItem(STORAGE_KEY, lang);
+        htmlEl.lang = lang;
         
-        if (lang === 'ms') {
-            langFlag.textContent = '🇬🇧'; // Show English flag when in Malay (click to switch to English)
-        } else {
-            langFlag.textContent = '🇲🇾'; // Show Malaysia flag when in English (click to switch to Malay)
+        // Update page title
+        const titleEl = document.querySelector('title');
+        if (titleEl) {
+            titleEl.textContent = titleEl.getAttribute('data-lang-' + lang) || titleEl.textContent;
         }
-    }
-    
-    function updatePageTitle(lang) {
-        const title = document.querySelector('title');
-        if (title) {
-            if (lang === 'ms') {
-                title.textContent = 'ULTANGBER – Belajar Sambil Bermain';
+        
+        // Show elements for current language, hide others
+        document.querySelectorAll('[data-lang-show]').forEach(el => {
+            const elementLang = el.getAttribute('data-lang-show');
+            if (elementLang === lang) {
+                el.style.display = '';
+                el.classList.remove('lang-hidden');
             } else {
-                title.textContent = 'ULTANGBER – Learn While You Play';
+                el.style.display = 'none';
+                el.classList.add('lang-hidden');
             }
+        });
+        
+        // Update flag button
+        if (lang === 'ms') {
+            btnFlag.textContent = '🇬🇧';
+        } else {
+            btnFlag.textContent = '🇲🇾';
         }
     }
-    
-    // ===== MOBILE HAMBURGER MENU - FIXED =====
-    const hamburger = document.getElementById('hamburgerBtn');
-    const navLinks = document.getElementById('navLinks');
-    
-    if (hamburger && navLinks) {
-        hamburger.addEventListener('click', function() {
-            this.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-        
-        // Close menu when clicking nav links
-        const navItems = navLinks.querySelectorAll('a');
-        navItems.forEach(item => {
-            item.addEventListener('click', function() {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!hamburger.contains(event.target) && !navLinks.contains(event.target)) {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            }
-        });
+
+    btn.addEventListener('click', function () {
+        const newLang = currentLang === 'ms' ? 'en' : 'ms';
+        console.log('Switching language to:', newLang);
+        applyLang(newLang);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Apply language immediately - this runs as soon as the script loads
+    applyLang(currentLang);
+
+
+    /* ── HAMBURGER MENU ───────────────────────────── */
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navLinks     = document.getElementById('navLinks');
+    const siteHeader   = document.getElementById('site-header');
+
+    function setHeaderHeight() {
+        const h = siteHeader ? siteHeader.offsetHeight : 0;
+        document.documentElement.style.setProperty('--header-h', h + 'px');
     }
-    
-    // ===== SMOOTH SCROLLING =====
-    const allLinks = document.querySelectorAll('a[href^="#"]');
-    allLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href === '#') return;
-            
-            e.preventDefault();
-            const targetId = href.substring(1);
-            const targetSection = document.getElementById(targetId);
-            
-            if (targetSection) {
-                const headerHeight = document.getElementById('site-header').offsetHeight;
-                const targetPosition = targetSection.offsetTop - headerHeight - 20;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
+    setHeaderHeight();
+    window.addEventListener('resize', setHeaderHeight);
+
+    hamburgerBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        const isOpen = navLinks.classList.contains('open');
+        navLinks.classList.toggle('open', !isOpen);
+        hamburgerBtn.classList.toggle('open', !isOpen);
+        hamburgerBtn.setAttribute('aria-expanded', String(!isOpen));
+        console.log('Hamburger menu toggled:', !isOpen);
+    });
+
+    // Close menu when a nav link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            hamburgerBtn.classList.remove('open');
         });
     });
-    
-    // ===== SCROLL REVEAL ANIMATIONS =====
-    const revealElements = document.querySelectorAll('.reveal');
-    
+
+    // Close on outside click
+    document.addEventListener('click', function (e) {
+        if (!siteHeader.contains(e.target)) {
+            navLinks.classList.remove('open');
+            hamburgerBtn.classList.remove('open');
+        }
+    });
+
+
+    /* ── ACTIVE NAV LINK ON SCROLL ────────────────── */
+    const sections = document.querySelectorAll('section[id]');
+    const navAnchors = document.querySelectorAll('.nav-links a');
+
+    function updateActiveNav() {
+        let current = '';
+        sections.forEach(sec => {
+            const top = sec.offsetTop - 100;
+            if (window.scrollY >= top) current = sec.getAttribute('id');
+        });
+        navAnchors.forEach(a => {
+            a.classList.remove('nav-active');
+            if (a.getAttribute('href') === '#' + current) a.classList.add('nav-active');
+        });
+    }
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+
+
+    /* ── SCROLL REVEAL ────────────────────────────── */
+    const revealEls = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                // Stagger siblings slightly
+                const siblings = entry.target.parentElement.querySelectorAll('.reveal');
+                let delay = 0;
+                siblings.forEach((sib, idx) => {
+                    if (sib === entry.target) delay = idx * 80;
+                });
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, delay);
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(el => revealObserver.observe(el));
+
+
+    /* ── HERO TEXT ENTRANCE ───────────────────────── */
+    setTimeout(() => {
+        const heroText = document.querySelector('.hero-text');
+        if (heroText) {
+            const introWords  = heroText.querySelectorAll('.hero-intro-word');
+            const logoEl     = heroText.querySelector('.hero-logo-big, .hero-logo-fallback');
+            const tagline    = heroText.querySelector('.hero-tagline');
+            const subtitles   = heroText.querySelectorAll('.hero-subtitle');
+            const actions    = heroText.querySelector('.hero-actions');
+            
+            const items = [...introWords, logoEl, tagline, ...subtitles, actions].filter(Boolean);
+
+            items.forEach(el => {
+                el.style.opacity   = '0';
+                el.style.transform = 'translateY(32px)';
+                el.style.transition = 'opacity .55s ease, transform .55s ease';
+            });
+
+            setTimeout(() => {
+                items.forEach((el, i) => {
+                    setTimeout(() => {
+                        el.style.opacity   = '1';
+                        el.style.transform = 'translateY(0)';
+                    }, i * 130);
+                });
+            }, 200);
+        }
+    }, 100);
+
+
+    /* ── STAT COUNTER ANIMATION ───────────────────── */
+    function animateCount(el, target, suffix, duration) {
+        const start = performance.now();
+        const isFloat = String(target).includes('.');
+        function step(now) {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const ease = 1 - Math.pow(1 - progress, 3); // cubic ease-out
+            const value = Math.round(ease * target * 10) / 10;
+            el.textContent = (isFloat ? value.toFixed(1) : Math.round(value)) + suffix;
+            if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+    }
+
+    const statObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('active');
+                const valEl = entry.target.querySelector('.stat-val');
+                if (!valEl || valEl.dataset.animated) return;
+                valEl.dataset.animated = '1';
+                const raw = valEl.textContent.trim(); // e.g. "+30%", "100%", "30"
+                const prefix = raw.startsWith('+') ? '+' : '';
+                const suffix = raw.includes('%') ? '%' : '';
+                const num = parseFloat(raw.replace(/[^0-9.]/g, ''));
+                valEl.textContent = prefix + '0' + suffix;
+                animateCount(valEl, num, suffix, 1400);
+                if (prefix) valEl.textContent = prefix + valEl.textContent;
             }
         });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    });
-    
-    revealElements.forEach(el => {
-        revealObserver.observe(el);
-    });
-    
-    // ===== HEADER SCROLL EFFECT =====
-    const header = document.getElementById('site-header');
-    let lastScroll = 0;
-    
-    window.addEventListener('scroll', function() {
-        const currentScroll = window.pageYOffset;
-        
-        // Add shadow when scrolled
-        if (currentScroll > 50) {
-            header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.12)';
-        } else {
-            header.style.boxShadow = '0 2px 12px rgba(0, 0, 0, 0.08)';
-        }
-        
-        lastScroll = currentScroll;
-    });
-    
-    // ===== ACTIVE NAV LINK HIGHLIGHTING =====
-    const sections = document.querySelectorAll('section[id]');
-    
-    function highlightNavLink() {
-        const scrollPosition = window.pageYOffset + 200;
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
-            
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                // Remove active from all links
-                document.querySelectorAll('.nav-links a').forEach(link => {
-                    link.classList.remove('active');
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.stat-block').forEach(el => statObserver.observe(el));
+
+
+    /* ── NAVBAR SCROLL SHADOW ─────────────────────── */
+    window.addEventListener('scroll', () => {
+        siteHeader.style.boxShadow = window.scrollY > 10
+            ? '0 4px 20px rgba(0,0,0,0.15)'
+            : '0 2px 8px rgba(0, 0, 0, 0.08)';
+    }, { passive: true });
+
+
+    /* ── CARD TILT EFFECT (desktop only) ─────────── */
+    function addTilt(selector) {
+        if (window.matchMedia('(hover: hover)').matches) {
+            document.querySelectorAll(selector).forEach(card => {
+                card.addEventListener('mousemove', e => {
+                    const rect = card.getBoundingClientRect();
+                    const x = (e.clientX - rect.left) / rect.width  - 0.5;
+                    const y = (e.clientY - rect.top)  / rect.height - 0.5;
+                    card.style.transform = `perspective(600px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg) scale(1.02)`;
+                    card.style.transition = 'transform .05s';
+                    card.style.zIndex = '2';
                 });
-                
-                // Add active to current section link
-                const activeLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
-                if (activeLink) {
-                    activeLink.classList.add('active');
-                }
-            }
-        });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = '';
+                    card.style.transition = 'transform .35s ease, background .2s';
+                    card.style.zIndex = '';
+                });
+            });
+        }
     }
-    
-    window.addEventListener('scroll', highlightNavLink);
-    
-    // ===== PERFORMANCE: Debounce scroll events =====
-    function debounce(func, wait = 10, immediate = true) {
-        let timeout;
-        return function() {
-            const context = this, args = arguments;
-            const later = function() {
-                timeout = null;
-                if (!immediate) func.apply(context, args);
-            };
-            const callNow = immediate && !timeout;
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-            if (callNow) func.apply(context, args);
-        };
-    }
-    
-    window.addEventListener('scroll', debounce(highlightNavLink));
-    
-    // ===== PREVENT FLASH OF UNSTYLED CONTENT =====
-    document.body.style.visibility = 'visible';
-    
-    // ===== IMAGE LAZY LOADING FALLBACK =====
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    if ('loading' in HTMLImageElement.prototype) {
-        // Browser supports lazy loading
-        console.log('Browser supports lazy loading');
-    } else {
-        // Fallback for browsers that don't support lazy loading
-        images.forEach(img => {
-            img.src = img.dataset.src || img.src;
-        });
-    }
-    
-    // ===== CONSOLE LOG =====
-    console.log('%c🎮 ULTANGBER Website Loaded Successfully! 🎮', 'color: #58CC02; font-size: 16px; font-weight: bold;');
-    console.log('%cLanguage: ' + currentLang.toUpperCase(), 'color: #1CB0F6; font-size: 14px;');
-    console.log('%cDeveloped by SEMEKAP Innovation Team', 'color: #FF9600; font-size: 12px;');
-});
+    addTilt('.audience-card');
+    addTilt('.komponen-card');
+    addTilt('.team-card');
 
-// ===== PAGE LOAD ANIMATION =====
-window.addEventListener('load', function() {
-    document.body.classList.add('loaded');
-});
 
-// ===== PREVENT RIGHT CLICK ON IMAGES (Optional) =====
-// Uncomment if you want to protect images
-/*
-document.addEventListener('contextmenu', function(e) {
-    if (e.target.tagName === 'IMG') {
-        e.preventDefault();
-        return false;
-    }
-});
-*/
-
-// ===== SERVICE WORKER (Optional - for PWA) =====
-// Uncomment if you want to add PWA functionality
-/*
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js').then(function(registration) {
-            console.log('ServiceWorker registration successful');
-        }, function(err) {
-            console.log('ServiceWorker registration failed: ', err);
+    /* ── SMOOTH ANCHOR SCROLLING ──────────────────── */
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (!target) return;
+            e.preventDefault();
+            const offset = siteHeader ? siteHeader.offsetHeight + 8 : 0;
+            window.scrollTo({
+                top: target.offsetTop - offset,
+                behavior: 'smooth'
+            });
         });
     });
-}
-*/
+
+
+    /* ── MOCKUP PLAY BUTTON PULSE ─────────────────── */
+    const mockupBtn = document.querySelector('.mockup-play-btn');
+    if (mockupBtn) {
+        setInterval(() => {
+            mockupBtn.style.background = 'var(--yellow)';
+            mockupBtn.style.color = 'var(--black, #080808)';
+            setTimeout(() => {
+                mockupBtn.style.background = 'var(--red)';
+                mockupBtn.style.color = 'white';
+            }, 600);
+        }, 2800);
+    }
+
+
+    /* ── ACTIVE NAV STYLE VIA CSS VAR ────────────── */
+    const style = document.createElement('style');
+    style.textContent = `.nav-links a.nav-active { color: var(--navy) !important; font-weight: 800; }`;
+    document.head.appendChild(style);
+
+
+})();
