@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-ms="ULTANGBER – Belajar Sambil Bermain" data-lang-en="ULTANGBER – Learn While You Play">ULTANGBER – Belajar Sambil Bermain</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style-enhanced.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="site-header">
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo-group">
+                <img src="assets/smkaa.png" alt="SMK Apin-Apin" class="school-logo"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='none'">
+                <div class="logo-divider"></div>
+                <a href="https://ultangber.onrender.com" target="_blank">
+                    <img src="assets/logo.png" alt="ULTANGBER" class="ultangber-logo"
+                         onerror="this.outerHTML='<span class=&quot;nav-logo-text&quot;>ULTANGBER</span>'">
+                </a>
+            </div>
+            
+            <ul class="nav-links" id="navLinks">
+                <li data-lang-show="ms"><a href="#hero">Utama</a></li>
+                <li data-lang-show="ms"><a href="#pengenalan">Pengenalan</a></li>
+                <li data-lang-show="ms"><a href="#komponen">Komponen</a></li>
+                <li data-lang-show="ms"><a href="#webapp">Web App</a></li>
+                <li data-lang-show="ms"><a href="#keberkesanan">Keberkesanan</a></li>
+                <li data-lang-show="ms"><a href="#testimoni">Testimoni</a></li>
+                <li data-lang-show="ms"><a href="#tentang-kami">Tentang Kami</a></li>
+                <li data-lang-show="ms"><a href="#muat-turun">Muat Turun</a></li>
+                <li data-lang-show="ms"><a href="#galeri">Galeri</a></li>
+                <li data-lang-show="en"><a href="#hero">Home</a></li>
+                <li data-lang-show="en"><a href="#pengenalan">About</a></li>
+                <li data-lang-show="en"><a href="#komponen">Components</a></li>
+                <li data-lang-show="en"><a href="#webapp">Web App</a></li>
+                <li data-lang-show="en"><a href="#keberkesanan">Results</a></li>
+                <li data-lang-show="en"><a href="#testimoni">Testimonials</a></li>
+                <li data-lang-show="en"><a href="#tentang-kami">About Us</a></li>
+                <li data-lang-show="en"><a href="#muat-turun">Downloads</a></li>
+                <li data-lang-show="en"><a href="#galeri">Gallery</a></li>
+            </ul>
+            
+            <div class="nav-right">
+                <button class="lang-toggle-btn" id="langToggleBtn" aria-label="Switch language">
+                    <span id="langBtnFlag">🇬🇧</span>
+                </button>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section id="hero">
+    <!-- Animated blob backdrop -->
+    <div class="hero-backdrop">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+    
+    <div class="container">
+        <div class="hero-inner">
+
+            <!-- LEFT: Text Content -->
+            <div class="hero-text">
+                <p class="hero-intro-word" data-lang-show="ms"><strong>Memperkenalkan</strong></p>
+                <p class="hero-intro-word" data-lang-show="en"><strong>Introducing</strong></p>
+                
+                <img src="assets/logo.png" alt="ULTANGBER" class="hero-logo-big"
+                     onerror="this.outerHTML='<div class=&quot;hero-logo-fallback&quot;>ULTANGBER</div>'">
+                
+                <p class="hero-tagline">— Game On. Brain On. —</p>
+                
+                <p class="hero-subtitle" data-lang-show="ms">Alat pembelajaran gamifikasi yang direka untuk meningkatkan penglibatan pelajar dan menggalakkan amalan berulang dengan cara yang lebih menyeronokkan.</p>
+                <p class="hero-subtitle" data-lang-show="en">A gamified learning tool designed to promote student engagement and encourage repeated practice in a more enjoyable manner.</p>
+                
+                <div class="hero-actions">
+                    <a href="#pengenalan" class="btn-primary">
+                        <span data-lang-show="ms">Ketahui Lebih Lanjut</span>
+                        <span data-lang-show="en">Learn More</span>
+                    </a>
+                    <a href="https://play-ultangber.vercel.app" target="_blank" class="btn-outline">
+                        <span data-lang-show="ms">Cuba Sekarang ↗</span>
+                        <span data-lang-show="en">Try Now ↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- RIGHT: Board Image -->
+            <div class="hero-visual">
+                <div class="hero-badge float-anim">
+                    <strong>
+                        <span data-lang-show="ms">Jadikan<br>Belajar<br>Seronok!</span>
+                        <span data-lang-show="en">Make<br>Learning<br>Fun!</span>
+                    </strong>
+                </div>
+                <img src="assets/papan.png" alt="ULTANGBER Game Board" class="hero-board-img"
+                     onerror="this.style.display='none'">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- PENGENALAN -->
+<section id="pengenalan">
+    <div class="container">
+        <div class="pengenalan-layout">
+            <div class="pengenalan-left reveal">
+                <h2 class="section-heading">
+                    <span data-lang-show="ms">Apa Itu ULTANGBER?</span>
+                    <span data-lang-show="en">What is ULTANGBER?</span>
+                </h2>
+                
+                <p class="body-text" data-lang-show="ms">ULTANGBER (Ular Tangga Berhalangan) ialah kit pembelajaran <strong>gamifikasi</strong> yang mengubah latihan tradisional menjadi pengalaman bermain yang interaktif dan menyeronokkan.</p>
+                <p class="body-text" data-lang-show="en">ULTANGBER (Challenge Snakes & Ladders) is a <strong>gamification</strong> learning kit that transforms traditional practice into an interactive and enjoyable gaming experience.</p>
+                
+                <p class="body-text" data-lang-show="ms">Diilhamkan oleh penyelidikan pendidikan yang menunjukkan bahawa penyertaan aktif dan interaksi dalam bilik darjah bukan sahaja meningkatkan hasil pelajar tetapi juga mengurangkan kebimbangan dan tekanan.</p>
+                <p class="body-text" data-lang-show="en">Inspired by educational research showing that active participation and interaction in the classroom not only improves student outcomes but also reduces anxiety and stress.</p>
+                
+                <div class="problem-solution-box reveal">
+                    <div class="ps-item">
+                        <div class="ps-icon red">⚠️</div>
+                        <div class="ps-content">
+                            <h3 class="ps-title">
+                                <span data-lang-show="ms">Masalah</span>
+                                <span data-lang-show="en">Problem</span>
+                            </h3>
+                            <p data-lang-show="ms">Kira-kira 2/3 pelajar kekal pasif semasa sesi latihan walaupun memahami bahan, kerana kebimbangan membuat kesilapan di hadapan rakan dan sifat monoton latihan berulang.</p>
+                            <p data-lang-show="en">Approximately 2/3 of students remain passive during practice sessions despite understanding the material, due to anxiety about making mistakes publicly and the monotonous nature of repetitive exercises.</p>
+                        </div>
+                    </div>
+                    <div class="ps-item">
+                        <div class="ps-icon green">✓</div>
+                        <div class="ps-content">
+                            <h3 class="ps-title">
+                                <span data-lang-show="ms">Penyelesaian</span>
+                                <span data-lang-show="en">Solution</span>
+                            </h3>
+                            <p data-lang-show="ms">ULTANGBER mengurangkan kebimbangan sosial dan meningkatkan motivasi melalui pembelajaran berasaskan permainan, menjadikan sesi latihan lebih menarik dan berkesan.</p>
+                            <p data-lang-show="en">ULTANGBER reduces social anxiety and increases motivation through game-based learning, making practice sessions more engaging and effective.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <ul class="feature-list">
+                    <li>
+                        <span class="feature-num">01</span> 
+                        <span data-lang-show="ms"><strong>Dua Format Pelengkap</strong> — Kit Fizikal untuk pembelajaran kolaboratif, Versi Web untuk latihan individu.</span>
+                        <span data-lang-show="en"><strong>Two Complementary Formats</strong> — Physical Kit for collaborative learning, Web Version for independent practice.</span>
+                    </li>
+                    <li>
+                        <span class="feature-num">02</span> 
+                        <span data-lang-show="ms"><strong>Mudah Disesuaikan</strong> — Boleh digunakan untuk pelbagai subjek dan tahap kesukaran.</span>
+                        <span data-lang-show="en"><strong>Easily Customizable</strong> — Can be used for various subjects and difficulty levels.</span>
+                    </li>
+                    <li>
+                        <span class="feature-num">03</span> 
+                        <span data-lang-show="ms"><strong>Kos Rendah</strong> — Hanya RM 25 untuk menghasilkan satu kit fizikal lengkap.</span>
+                        <span data-lang-show="en"><strong>Low Cost</strong> — Only RM 25 to produce one complete physical kit.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="pengenalan-right">
+                <div class="audience-grid">
+                    <div class="audience-card reveal">
+                        <div class="aud-icon">🎨</div>
+                        <h3 class="aud-title">
+                            <span data-lang-show="ms">Prasekolah</span>
+                            <span data-lang-show="en">Preschool</span>
+                        </h3>
+                        <p class="aud-desc">
+                            <span data-lang-show="ms">Soalan bergambar, warna-warni, dan interaktif.</span>
+                            <span data-lang-show="en">Picture-based, colorful, and interactive questions.</span>
+                        </p>
+                    </div>
+                    <div class="audience-card reveal">
+                        <div class="aud-icon">📚</div>
+                        <h3 class="aud-title">
+                            <span data-lang-show="ms">Sekolah Rendah</span>
+                            <span data-lang-show="en">Primary School</span>
+                        </h3>
+                        <p class="aud-desc">
+                            <span data-lang-show="ms">Soalan asas dalam Matematik, Sains, dan Bahasa.</span>
+                            <span data-lang-show="en">Basic questions in Math, Science, and Language.</span>
+                        </p>
+                    </div>
+                    <div class="audience-card reveal">
+                        <div class="aud-icon">🧠</div>
+                        <h3 class="aud-title">
+                            <span data-lang-show="ms">Sekolah Menengah</span>
+                            <span data-lang-show="en">Secondary School</span>
+                        </h3>
+                        <p class="aud-desc">
+                            <span data-lang-show="ms">Soalan tahap SPM dan simulasi peperiksaan.</span>
+                            <span data-lang-show="en">SPM-level questions and exam simulations.</span>
+                        </p>
+                    </div>
+                    <div class="audience-card reveal">
+                        <div class="aud-icon">🎓</div>
+                        <h3 class="aud-title">
+                            <span data-lang-show="ms">Institusi Tinggi</span>
+                            <span data-lang-show="en">Higher Education</span>
+                        </h3>
+                        <p class="aud-desc">
+                            <span data-lang-show="ms">Soalan konsep lanjutan untuk kolej dan universiti.</span>
+                            <span data-lang-show="en">Advanced conceptual questions for college and university.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- SDG Badge -->
+                <div class="sdg-badge reveal">
+                    <img src="assets/sdg4.png" alt="SDG 4 Quality Education" class="sdg-img"
+                         onerror="this.style.display='none'">
+                    <div class="sdg-text">
+                        <strong data-lang-show="ms">Menyokong Matlamat Pembangunan Lestari #4</strong>
+                        <strong data-lang-show="en">Supporting Sustainable Development Goal #4</strong>
+                        <span data-lang-show="ms">Pendidikan Berkualiti</span>
+                        <span data-lang-show="en">Quality Education</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- KOMPONEN -->
+<section id="komponen">
+    <div class="container">
+        <h2 class="section-heading">
+            <span data-lang-show="ms">Komponen ULTANGBER Kit</span>
+            <span data-lang-show="en">ULTANGBER Kit Components</span>
+        </h2>
+        
+        <div class="komponen-grid">
+            <!-- Papan Cabaran -->
+            <div class="komponen-card reveal">
+                <div class="komp-num">01</div>
+                <div class="komp-visual">
+                    <img src="assets/papan.png" alt="Papan Cabaran" 
+                         onerror="this.style.display='none'">
+                </div>
+                <h3 class="komp-title">
+                    <span data-lang-show="ms">Papan Cabaran</span>
+                    <span data-lang-show="en">Challenge Board</span>
+                </h3>
+                <p class="komp-desc">
+                    <span data-lang-show="ms">Papan permainan 5×8 (40 petak) dengan 3 jenis petak istimewa: Tangga (peneguhan positif), Ular (titik cabaran), dan petak Cabaran (pencetus soalan).</span>
+                    <span data-lang-show="en">5×8 game board (40 squares) with 3 types of special squares: Ladders (positive reinforcement), Snakes (challenge points), and Challenge squares (question triggers).</span>
+                </p>
+            </div>
+
+            <!-- Kad Cabaran -->
+            <div class="komponen-card reveal">
+                <div class="komp-num">02</div>
+                <div class="komp-visual">
+                    <img src="assets/kad-cabaran.png" alt="Kad Cabaran" 
+                         onerror="this.style.display='none'">
+                </div>
+                <h3 class="komp-title">
+                    <span data-lang-show="ms">Kad Cabaran</span>
+                    <span data-lang-show="en">Challenge Cards</span>
+                </h3>
+                <p class="komp-desc">
+                    <span data-lang-show="ms">30 kad soalan merentas 3 aras kesukaran (Mudah, Sederhana, Sukar) untuk pelbagai peringkat pembelajaran.</span>
+                    <span data-lang-show="en">30 question cards across 3 difficulty levels (Easy, Medium, Hard) for various learning stages.</span>
+                </p>
+            </div>
+
+            <!-- Kad Kuasa -->
+            <div class="komponen-card reveal">
+                <div class="komp-num">03</div>
+                <div class="komp-visual">
+                    <img src="assets/kad-kuasa.png" alt="Kad Kuasa" 
+                         onerror="this.style.display='none'">
+                </div>
+                <h3 class="komp-title">
+                    <span data-lang-show="ms">Kad Kuasa</span>
+                    <span data-lang-show="en">Power Cards</span>
+                </h3>
+                <p class="komp-desc">
+                    <span data-lang-show="ms">12 Kad Kuasa (3 jenis × 4 salinan) menambah kedalaman strategik dan unsur tidak dapat diramal kepada permainan.</span>
+                    <span data-lang-show="en">12 Power Cards (3 types × 4 copies) add strategic depth and unpredictability to the game.</span>
+                </p>
+            </div>
+
+            <!-- Komponen Lain -->
+            <div class="komponen-card reveal">
+                <div class="komp-num">04</div>
+                <div class="komp-visual">
+                    <img src="assets/bidak-dadu.png" alt="Komponen Lain" 
+                         onerror="this.style.display='none'">
+                </div>
+                <h3 class="komp-title">
+                    <span data-lang-show="ms">Komponen Sokongan</span>
+                    <span data-lang-show="en">Supporting Components</span>
+                </h3>
+                <p class="komp-desc">
+                    <span data-lang-show="ms">Termasuk Helaian Jawapan, dadu, token pemain, dan Buku Panduan lengkap untuk pengalaman permainan yang sempurna.</span>
+                    <span data-lang-show="en">Includes Answer Sheets, dice, player tokens, and comprehensive Guidebook for the complete gaming experience.</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Cost Breakdown -->
+        <div class="cost-breakdown reveal">
+            <h3 class="cost-title">
+                <span data-lang-show="ms">💰 Kos Pengeluaran (1 Kit)</span>
+                <span data-lang-show="en">💰 Production Cost (1 Kit)</span>
+            </h3>
+            <div class="cost-table">
+                <div class="cost-row">
+                    <span class="cost-item">
+                        <span data-lang-show="ms">Kertas A2 (Papan Cabaran)</span>
+                        <span data-lang-show="en">A2 Paper (Challenge Board)</span>
+                    </span>
+                    <span class="cost-price">RM 5.00</span>
+                </div>
+                <div class="cost-row">
+                    <span class="cost-item">
+                        <span data-lang-show="ms">Kertas A4 (Kad & Helaian)</span>
+                        <span data-lang-show="en">A4 Paper (Cards & Sheets)</span>
+                    </span>
+                    <span class="cost-price">RM 10.00</span>
+                </div>
+                <div class="cost-row">
+                    <span class="cost-item">
+                        <span data-lang-show="ms">Dadu</span>
+                        <span data-lang-show="en">Dice</span>
+                    </span>
+                    <span class="cost-price">RM 2.00</span>
+                </div>
+                <div class="cost-row">
+                    <span class="cost-item">
+                        <span data-lang-show="ms">Percetakan & Laminat</span>
+                        <span data-lang-show="en">Printing & Laminating</span>
+                    </span>
+                    <span class="cost-price">RM 8.00</span>
+                </div>
+                <div class="cost-row cost-total">
+                    <span class="cost-item">
+                        <span data-lang-show="ms">Jumlah Anggaran</span>
+                        <span data-lang-show="en">Total Estimated Cost</span>
+                    </span>
+                    <span class="cost-price">RM 25.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WEB APP -->
+<section id="webapp">
+    <div class="container">
+        <div class="webapp-layout">
+            <div class="webapp-left reveal">
+                <h2 class="section-heading">
+                    <span data-lang-show="ms">Versi Web Digital</span>
+                    <span data-lang-show="en">Digital Web Version</span>
+                </h2>
+                
+                <p class="body-text" data-lang-show="ms">
+                    Untuk membolehkan latihan bebas tanpa memerlukan berbilang pemain, kami membangunkan versi web yang mereplikasi gameplay fizikal dengan ciri-ciri tambahan.
+                </p>
+                <p class="body-text" data-lang-show="en">
+                    To enable independent practice without requiring multiple players, we developed a web version that replicates the physical gameplay with additional features.
+                </p>
+
+                <ul class="feature-list">
+                    <li>
+                        <span class="feature-num">🎮</span> 
+                        <span data-lang-show="ms"><strong>3 Saiz Papan</strong> — Pilih 5×8, 6×9, atau 7×10 mengikut keperluan.</span>
+                        <span data-lang-show="en"><strong>3 Board Sizes</strong> — Choose 5×8, 6×9, or 7×10 according to needs.</span>
+                    </li>
+                    <li>
+                        <span class="feature-num">🤖</span> 
+                        <span data-lang-show="ms"><strong>Bot Lawan</strong> — Main melawan bot dengan ketepatan 70%.</span>
+                        <span data-lang-show="en"><strong>Bot Opponent</strong> — Play against bot with 70% accuracy.</span>
+                    </li>
+                    <li>
+                        <span class="feature-num">✏️</span> 
+                        <span data-lang-show="ms"><strong>Editor Soalan</strong> — Cipta set soalan sendiri dengan mudah.</span>
+                        <span data-lang-show="en"><strong>Question Editor</strong> — Create custom question sets easily.</span>
+                    </li>
+                    <li>
+                        <span class="feature-num">📱</span> 
+                        <span data-lang-show="ms"><strong>Responsif Sepenuhnya</strong> — Berfungsi dengan sempurna di desktop dan mobile.</span>
+                        <span data-lang-show="en"><strong>Fully Responsive</strong> — Works perfectly on desktop and mobile.</span>
+                    </li>
+                </ul>
+
+                <!-- Tech Stack -->
+                <div class="tech-stack">
+                    <h4 data-lang-show="ms">Teknologi</h4>
+                    <h4 data-lang-show="en">Technology</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Express</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Vercel</span>
+                    </div>
+                </div>
+
+                <a href="https://play-ultangber.vercel.app" target="_blank" class="btn-primary">
+                    <span data-lang-show="ms">Cuba Web App Sekarang ↗</span>
+                    <span data-lang-show="en">Try Web App Now ↗</span>
+                </a>
+            </div>
+
+            <div class="webapp-right reveal">
+                <div class="webapp-mockup">
+                    <img src="assets/webapp-mockup.png" alt="ULTANGBER Web App" 
+                         onerror="this.style.display='none'">
+                    <a href="https://play-ultangber.vercel.app" target="_blank" class="mockup-play-btn">
+                        <i class="fas fa-play"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- KEBERKESANAN -->
+<section id="keberkesanan">
+    <div class="container">
+        <h2 class="section-heading">
+            <span data-lang-show="ms">Keberkesanan ULTANGBER</span>
+            <span data-lang-show="en">ULTANGBER Effectiveness</span>
+        </h2>
+        
+        <p class="section-intro reveal">
+            <span data-lang-show="ms">Ujian rintis dengan pelajar sekolah menengah menunjukkan hasil yang menggalakkan dalam pelbagai aspek pembelajaran.</span>
+            <span data-lang-show="en">Pilot testing with secondary school students showed promising results across multiple learning aspects.</span>
+        </p>
+
+        <div class="stats-grid">
+            <div class="stat-block reveal">
+                <div class="stat-icon">📚</div>
+                <div class="stat-content">
+                    <div class="stat-val">68.6%</div>
+                    <p class="stat-label">
+                        <span data-lang-show="ms">Pelajar setuju atau sangat setuju permainan lebih menarik daripada aktiviti lain</span>
+                        <span data-lang-show="en">Students agree or strongly agree the game is more interesting than other activities</span>
+                    </p>
+                </div>
+            </div>
+            <div class="stat-block reveal">
+                <div class="stat-icon">🙋</div>
+                <div class="stat-content">
+                    <div class="stat-val">57.1%</div>
+                    <p class="stat-label">
+                        <span data-lang-show="ms">Pelajar bersetuju atau sangat bersetuju mereka lebih aktif mengambil bahagian</span>
+                        <span data-lang-show="en">Students agree or strongly agree they actively participated more</span>
+                    </p>
+                </div>
+            </div>
+            <div class="stat-block reveal">
+                <div class="stat-icon">👥</div>
+                <div class="stat-content">
+                    <div class="stat-val">71.4%</div>
+                    <p class="stat-label">
+                        <span data-lang-show="ms">Pelajar setuju atau sangat setuju mereka bekerjasama dan berbincang dengan rakan</span>
+                        <span data-lang-show="en">Students agree or strongly agree they collaborated and discussed with peers</span>
+                    </p>
+                </div>
+            </div>
+            <div class="stat-block reveal">
+                <div class="stat-icon">😊</div>
+                <div class="stat-content">
+                    <div class="stat-val">74.3%</div>
+                    <p class="stat-label">
+                        <span data-lang-show="ms">Pelajar setuju, sangat setuju atau neutral bahawa mereka menikmati permainan</span>
+                        <span data-lang-show="en">Students agree, strongly agree, or neutral that they enjoyed the game</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="keberk-note reveal">
+            <div class="note-icon">💡</div>
+            <div class="note-content">
+                <strong>
+                    <span data-lang-show="ms">Nota Penyelidikan</span>
+                    <span data-lang-show="en">Research Note</span>
+                </strong>
+                <p>
+                    <span data-lang-show="ms">
+                        Ujian ini dijalankan dalam skala kecil dan hanya memberi tumpuan kepada persepsi, bukan hasil akademik. Ujian lanjut diperlukan untuk menguji kesan inovasi terhadap hasil akademik pelajar dalam jangka panjang.
+                    </span>
+                    <span data-lang-show="en">
+                        Testing was conducted on a small scale and focused only on perceptions, not academic outcomes. Further testing is required to assess the innovation's impact on students' academic outcomes in the long term.
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONI -->
+<section id="testimoni">
+    <div class="container">
+        <h2 class="section-heading">
+            <span data-lang-show="ms">Apa Kata Mereka?</span>
+            <span data-lang-show="en">What They Say?</span>
+        </h2>
+
+        <div class="testimoni-grid">
+            <!-- Student Testimonial 1 -->
+            <div class="testimoni-card reveal">
+                <div class="testi-quote">"</div>
+                <p class="testi-text" data-lang-show="ms">Saya dulu takut dengan algebra, tetapi sekarang saya suka bermain ULTANGBER! Rasanya seperti bermain game tetapi saya belajar pada masa yang sama.</p>
+                <p class="testi-text" data-lang-show="en">I used to be afraid of algebra, but now I enjoy playing ULTANGBER! It feels like playing a game but I'm learning at the same time.</p>
+                <div class="testi-author">
+                    <div class="testi-avatar">
+                        <span>J</span>
+                    </div>
+                    <div class="testi-info">
+                        <strong>Joshua</strong>
+                        <span data-lang-show="ms">Pelajar Tingkatan 2</span>
+                        <span data-lang-show="en">Form 2 Student</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Student Testimonial 2 -->
+            <div class="testimoni-card reveal">
+                <div class="testi-quote">"</div>
+                <p class="testi-text" data-lang-show="ms">Pada pendapat saya, permainan ULTANGBER ini adalah alat pembelajaran yang berkesan kerana ia menggabungkan keseronokan dengan pendidikan. Belajar algebra melalui permainan menjadikan topik kurang menekan dan lebih menarik.</p>
+                <p class="testi-text" data-lang-show="en">In my opinion, this ULTANGBER game is an effective learning tool because it combines fun with education. Learning algebra through a game makes the topic less stressful and more engaging.</p>
+                <div class="testi-author">
+                    <div class="testi-avatar">
+                        <span>E</span>
+                    </div>
+                    <div class="testi-info">
+                        <strong>Eve</strong>
+                        <span data-lang-show="ms">Pelajar Tingkatan 4</span>
+                        <span data-lang-show="en">Form 4 Student</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Teacher Testimonial -->
+            <div class="testimoni-card testimoni-featured reveal">
+                <div class="testi-quote">"</div>
+                <p class="testi-text" data-lang-show="ms">Pelajar lebih aktif dan yakin dalam mencuba menjawab soalan. Permainan ini mencipta persekitaran pembelajaran yang menyeronokkan dan menyokong.</p>
+                <p class="testi-text" data-lang-show="en">Students are more active and confident in trying to answer questions. This game creates a fun and supportive learning environment.</p>
+                <div class="testi-author">
+                    <div class="testi-avatar teacher">
+                        <span>F</span>
+                    </div>
+                    <div class="testi-info">
+                        <strong>Pn. Faridah Abdul Wahab</strong>
+                        <span data-lang-show="ms">Guru Matematik, SMK Apin-Apin</span>
+                        <span data-lang-show="en">Mathematics Teacher, SMK Apin-Apin</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TENTANG KAMI -->
+<section id="tentang-kami">
+    <div class="container">
+        <h2 class="section-heading">
+            <span data-lang-show="ms">Pasukan SEMEKAP Innovation</span>
+            <span data-lang-show="en">SEMEKAP Innovation Team</span>
+        </h2>
+        
+        <p class="team-intro reveal">
+            <span data-lang-show="ms">
+                ULTANGBER dihasilkan oleh pasukan SEMEKAP Innovation Team dari SMK Apin-Apin, Sabah untuk International STEM Festival SMLY 2026. Kami adalah sekumpulan pelajar Tingkatan 2 dan Tingkatan 4 yang bersemangat untuk mencipta alat pembelajaran yang inovatif dan berkesan.
+            </span>
+            <span data-lang-show="en">
+                ULTANGBER was created by the SEMEKAP Innovation Team from SMK Apin-Apin, Sabah for the International STEM Festival SMLY 2026. We are a group of Form 2 and Form 4 students passionate about creating innovative and effective learning tools.
+            </span>
+        </p>
+
+        <div class="team-grid">
+            <div class="team-card reveal">
+                <div class="team-avatar">
+                    <span>A</span>
+                </div>
+                <h3 class="team-name">Arieck Olend Petrick</h3>
+                <p class="team-role">
+                    <span data-lang-show="ms">Ahli Pasukan</span>
+                    <span data-lang-show="en">Team Member</span>
+                </p>
+            </div>
+
+            <div class="team-card reveal">
+                <div class="team-avatar">
+                    <span>D</span>
+                </div>
+                <h3 class="team-name">Debby Dannia Albinos</h3>
+                <p class="team-role">
+                    <span data-lang-show="ms">Ahli Pasukan</span>
+                    <span data-lang-show="en">Team Member</span>
+                </p>
+            </div>
+
+            <div class="team-card reveal">
+                <div class="team-avatar">
+                    <span>E</span>
+                </div>
+                <h3 class="team-name">Eve Elestereza Dius</h3>
+                <p class="team-role">
+                    <span data-lang-show="ms">Ahli Pasukan</span>
+                    <span data-lang-show="en">Team Member</span>
+                </p>
+            </div>
+
+            <div class="team-card reveal">
+                <div class="team-avatar">
+                    <span>I</span>
+                </div>
+                <h3 class="team-name">Muhammad Iqram Bin Noor Hafiz</h3>
+                <p class="team-role">
+                    <span data-lang-show="ms">Ahli Pasukan</span>
+                    <span data-lang-show="en">Team Member</span>
+                </p>
+            </div>
+
+            <div class="team-card reveal">
+                <div class="team-avatar">
+                    <span>N</span>
+                </div>
+                <h3 class="team-name">Nur Irdina Zaidah Binti Abdul Saad</h3>
+                <p class="team-role">
+                    <span data-lang-show="ms">Ahli Pasukan</span>
+                    <span data-lang-show="en">Team Member</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Mentor -->
+        <div class="mentor-section reveal">
+            <h3 class="mentor-title">
+                <span data-lang-show="ms">Guru Pembimbing</span>
+                <span data-lang-show="en">Mentor Teacher</span>
+            </h3>
+            <div class="mentor-card">
+                <div class="mentor-avatar">
+                    <span>F</span>
+                </div>
+                <div class="mentor-info">
+                    <strong>Pn. Faridah Binti Abdul Wahab</strong>
+                    <span>SMK Apin-Apin, Sabah</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MUAT TURUN -->
+<section id="muat-turun">
+    <div class="container">
+        <h2 class="section-heading">
+            <span data-lang-show="ms">Muat Turun Percuma</span>
+            <span data-lang-show="en">Free Downloads</span>
+        </h2>
+
+        <div class="dl-warning reveal">
+            <div class="dl-warning-icon">📥</div>
+            <div class="dl-warning-text">
+                <strong>
+                    <span data-lang-show="ms">Semua Komponen Tersedia Percuma!</span>
+                    <span data-lang-show="en">All Components Available for Free!</span>
+                </strong>
+                <span data-lang-show="ms">
+                    Muat turun, cetak, dan gunakan untuk kelas anda sendiri. Semua fail tersedia dalam format PDF yang boleh dicetak terus.
+                </span>
+                <span data-lang-show="en">
+                    Download, print, and use for your own classroom. All files available in PDF format ready for printing.
+                </span>
+            </div>
+        </div>
+
+        <div class="dl-grid">
+            
+            <div class="dl-card reveal">
+                <div class="dl-card-num">01</div>
+                <div class="dl-card-icon">🎲</div>
+                <div class="dl-card-body">
+                    <h3 class="dl-card-title">
+                        <span data-lang-show="ms">Papan Cabaran</span>
+                        <span data-lang-show="en">Challenge Board</span>
+                    </h3>
+                    <p class="dl-card-desc">
+                        <span data-lang-show="ms">Papan permainan utama 5×8 dengan 40 petak termasuk petak istimewa (Tangga, Ular, Cabaran).</span>
+                        <span data-lang-show="en">Main 5×8 game board with 40 squares including special tiles (Ladder, Snake, Challenge).</span>
+                    </p>
+                    <div class="dl-card-meta">
+                        <span class="dl-tag">PDF</span>
+                        <span class="dl-tag">1 Page</span>
+                        <span class="dl-tag">A3 / A2</span>
+                    </div>
+                </div>
+                <a href="assets/downloads/papan-cabaran.pdf" download class="dl-btn">
+                    <i class="fas fa-download"></i>
+                    <span data-lang-show="ms">Muat Turun</span>
+                    <span data-lang-show="en">Download</span>
+                </a>
+            </div>
+
+            <div class="dl-card reveal">
+                <div class="dl-card-num">02</div>
+                <div class="dl-card-icon">🃏</div>
+                <div class="dl-card-body">
+                    <h3 class="dl-card-title">
+                        <span data-lang-show="ms">Kad Cabaran & Kad Kuasa</span>
+                        <span data-lang-show="en">Challenge Cards & Power Cards</span>
+                    </h3>
+                    <p class="dl-card-desc">
+                        <span data-lang-show="ms">30 Kad Cabaran (3 aras) dan 12 Kad Kuasa untuk permainan yang strategik.</span>
+                        <span data-lang-show="en">30 Challenge Cards (3 levels) and 12 Power Cards for strategic gameplay.</span>
+                    </p>
+                    <div class="dl-card-meta">
+                        <span class="dl-tag">PDF</span>
+                        <span class="dl-tag">Multiple Pages</span>
+                        <span class="dl-tag">A4</span>
+                    </div>
+                </div>
+                <a href="assets/downloads/kad-cabaran-kuasa.pdf" download class="dl-btn">
+                    <i class="fas fa-download"></i>
+                    <span data-lang-show="ms">Muat Turun</span>
+                    <span data-lang-show="en">Download</span>
+                </a>
+            </div>
+
+            <div class="dl-card reveal">
+                <div class="dl-card-num">03</div>
+                <div class="dl-card-icon">📖</div>
+                <div class="dl-card-body">
+                    <h3 class="dl-card-title">
+                        <span data-lang-show="ms">Buku Panduan</span>
+                        <span data-lang-show="en">Guidebook</span>
+                    </h3>
+                    <p class="dl-card-desc">
+                        <span data-lang-show="ms">Arahan lengkap cara bermain, penerangan petak istimewa, dan panduan Kad Kuasa.</span>
+                        <span data-lang-show="en">Complete instructions on how to play, special square explanations, and Power Card guide.</span>
+                    </p>
+                    <div class="dl-card-meta">
+                        <span class="dl-tag">PDF</span>
+                        <span class="dl-tag">8 Pages</span>
+                        <span class="dl-tag">BM & EN</span>
+                    </div>
+                </div>
+                <a href="assets/downloads/buku-panduan.pdf" download class="dl-btn">
+                    <i class="fas fa-download"></i>
+                    <span data-lang-show="ms">Muat Turun</span>
+                    <span data-lang-show="en">Download</span>
+                </a>
+            </div>
+
+            <div class="dl-card dl-card-canva reveal">
+                <div class="dl-card-num">04</div>
+                <div class="dl-card-icon">🎨</div>
+                <div class="dl-card-body">
+                    <h3 class="dl-card-title">
+                        <span data-lang-show="ms">Templat Canva</span>
+                        <span data-lang-show="en">Canva Template</span>
+                    </h3>
+                    <p class="dl-card-desc">
+                        <span data-lang-show="ms">Cipta Kad Cabaran anda sendiri dengan templat Canva yang boleh diedit.</span>
+                        <span data-lang-show="en">Create your own Challenge Cards with editable Canva template.</span>
+                    </p>
+                    <div class="dl-card-meta">
+                        <span class="dl-tag dl-tag-canva">Canva</span>
+                        <span class="dl-tag">Editable</span>
+                        <span class="dl-tag">Free</span>
+                    </div>
+                    <p class="dl-canva-note">
+                        <span data-lang-show="ms">⚠️ Akaun Canva percuma diperlukan. Untuk kegunaan pendidikan sahaja.</span>
+                        <span data-lang-show="en">⚠️ Free Canva account required. For educational use only.</span>
+                    </p>
+                </div>
+                <a href="https://www.canva.com" target="_blank" rel="noopener" class="dl-btn dl-btn-canva">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span data-lang-show="ms">Buka di Canva ↗</span>
+                    <span data-lang-show="en">Open in Canva ↗</span>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- PRINT TIPS -->
+        <div class="dl-tips reveal">
+            <h4 class="dl-tips-title">
+                <span data-lang-show="ms">💡 Tips Cetakan</span>
+                <span data-lang-show="en">💡 Printing Tips</span>
+            </h4>
+            <ul class="dl-tips-list">
+                <li>
+                    <span data-lang-show="ms">Cetak Papan Cabaran pada <strong>kertas A3 atau A2</strong> untuk saiz yang selesa.</span>
+                    <span data-lang-show="en">Print Challenge Board on <strong>A3 or A2 paper</strong> for comfortable size.</span>
+                </li>
+                <li>
+                    <span data-lang-show="ms"><strong>Laminatkan kad</strong> untuk ketahanan jangka panjang.</span>
+                    <span data-lang-show="en"><strong>Laminate cards</strong> for long-term durability.</span>
+                </li>
+                <li>
+                    <span data-lang-show="ms">Gunakan <strong>kertas stiker</strong> untuk hasil yang lebih profesional.</span>
+                    <span data-lang-show="en">Use <strong>sticker paper</strong> for more professional results.</span>
+                </li>
+                <li>
+                    <span data-lang-show="ms">Cetak dalam <strong>warna penuh</strong> untuk kod warna yang jelas.</span>
+                    <span data-lang-show="en">Print in <strong>full colour</strong> for clear colour codes.</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<!-- GALERI -->
+<section id="galeri">
+    <div class="container">
+        <h2 class="section-heading">
+            <span data-lang-show="ms">Galeri</span>
+            <span data-lang-show="en">Gallery</span>
+        </h2>
+        <div class="galeri-masonry">
+            <div class="galeri-item reveal">
+                <img src="assets/galeri-cf.jpg" alt="Students playing ULTANGBER" 
+                     onerror="this.parentElement.classList.add('galeri-empty')">
+                <div class="galeri-caption">
+                    <span data-lang-show="ms">Pelajar bermain ULTANGBER Kit</span>
+                    <span data-lang-show="en">Students playing ULTANGBER Kit</span>
+                </div>
+            </div>
+            <div class="galeri-item reveal">
+                <img src="assets/galeri-fd.jpg" alt="Teacher guiding students" 
+                     onerror="this.parentElement.classList.add('galeri-empty')">
+                <div class="galeri-caption">
+                    <span data-lang-show="ms">Guru membimbing pelajar</span>
+                    <span data-lang-show="en">Teacher guiding students</span>
+                </div>
+            </div>
+            <div class="galeri-item reveal">
+                <img src="assets/galeri-mf.jpg" alt="ULTANGBER components" 
+                     onerror="this.parentElement.classList.add('galeri-empty')">
+                <div class="galeri-caption">
+                    <span data-lang-show="ms">Komponen ULTANGBER</span>
+                    <span data-lang-show="en">ULTANGBER components</span>
+                </div>
+            </div>
+            <div class="galeri-item reveal">
+                <img src="assets/galeri-pp.jpg" alt="Game in action" 
+                     onerror="this.parentElement.classList.add('galeri-empty')">
+                <div class="galeri-caption">
+                    <span data-lang-show="ms">Permainan sedang berlangsung</span>
+                    <span data-lang-show="en">Game in action</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <h3>ULTANGBER</h3>
+                <p>
+                    <span data-lang-show="ms">Alat pembelajaran gamifikasi yang menjadikan sesi belajar lebih seronok, interaktif, dan berkesan — untuk semua peringkat umur.</span>
+                    <span data-lang-show="en">A gamified learning tool that makes every study session more fun, interactive, and effective — for all ages.</span>
+                </p>
+                <div class="footer-links">
+                    <p class="footer-event">
+                        <i class="fas fa-trophy"></i>
+                        <span data-lang-show="ms">International STEM Festival SMLY 2026</span>
+                        <span data-lang-show="en">International STEM Festival SMLY 2026</span>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-contact-group">
+                <h4>
+                    <span data-lang-show="ms">Hubungi Kami</span>
+                    <span data-lang-show="en">Contact Us</span>
+                </h4>
+                <div class="footer-contacts">
+                    <p><i class="fas fa-school"></i>SMK Apin-Apin, Sabah</p>
+                    <p><i class="fas fa-phone"></i>+60 11-5652 7350 (Pn. Faridah)</p>
+                    <a href="mailto:ultangber@gmail.com"><i class="fas fa-envelope"></i>ultangber@gmail.com</a>
+                    <a href="https://ultangber.onrender.com" target="_blank">
+                        <i class="fas fa-globe"></i>
+                        <span data-lang-show="ms">Laman Web ULTANGBER</span>
+                        <span data-lang-show="en">ULTANGBER Website</span>
+                    </a>
+                    <a href="https://play-ultangber.vercel.app" target="_blank">
+                        <i class="fas fa-gamepad"></i>
+                        <span data-lang-show="ms">Web App ULTANGBER</span>
+                        <span data-lang-show="en">ULTANGBER Web App</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-bar">
+            <p>
+                <span data-lang-show="ms">&copy; 2026 SEMEKAP Innovation Team, SMK Apin-Apin – Hak Cipta Terpelihara</span>
+                <span data-lang-show="en">&copy; 2026 SEMEKAP Innovation Team, SMK Apin-Apin – All Rights Reserved</span>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
