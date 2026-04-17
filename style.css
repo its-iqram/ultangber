@@ -3,18 +3,22 @@
    ═══════════════════════════════════════════════════ */
 
 :root {
-    /* Color palette - exact match with web app */
-    --black:     #1C1C1C;
-    --white:     #FFFFFF;
+    --black: #1C1C1C;
+    --white: #FFFFFF;
     --lightgray: #F5F7FA;
-    --midgray:   #E2E6ED;
-    --red:       #FF3B3B;
-    --navy:      #2541B2;
-    --navy-dark: #1a2f8a;
-    --yellow:    #FFD500;
-    --green:     #58CC02;
-    --blue:      #2E9CFF;
-    --purple:    #8E44AD;
+    --navy: #2541B2;
+    --red: #FF3B3B;
+    --yellow: #FFD500;
+    --green: #58CC02;
+    --blue: #2E9CFF;
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.11);
+    --shadow-lg: 0 8px 28px rgba(0,0,0,0.14);
+    --shadow-xl: 0 14px 40px rgba(0,0,0,0.18);
     
     /* Shadows - exact match with web app */
     --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
