@@ -1658,3 +1658,562 @@ footer {
         text-align: center;
     }
 }
+
+/* ═══════════════════════════════════════════════════
+   ULTANGBER - CRITICAL CSS UPDATES
+   Add these to your existing style.css
+   ═══════════════════════════════════════════════════ */
+
+/* 1. HERO SECTION - GRADIENT BACKGROUND */
+#hero {
+    position: relative;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.hero-gradient-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        #FFE5B4 0%,      /* Soft yellow */
+        #FFD1DC 25%,     /* Soft pink */
+        #E6E6FA 50%,     /* Soft lavender */
+        #B0E0E6 75%,     /* Soft blue */
+        #F0E68C 100%     /* Light yellow */
+    );
+    z-index: 0;
+}
+
+.hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-text {
+    order: 1;
+}
+
+.hero-visual {
+    order: 2;
+}
+
+.hero-board-perspective {
+    perspective: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-board-img {
+    width: 100%;
+    max-width: 500px;
+    transform: rotateY(-15deg) rotateX(5deg);
+    filter: drop-shadow(20px 20px 40px rgba(0,0,0,0.3));
+    transition: transform 0.3s ease;
+}
+
+.hero-board-img:hover {
+    transform: rotateY(-10deg) rotateX(3deg) scale(1.05);
+}
+
+.hero-logo-big {
+    max-height: 120px;
+    width: auto;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
+    margin-bottom: 16px;
+}
+
+.hero-tagline {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.05rem;
+    color: rgba(0,0,0,0.75);
+    line-height: 1.7;
+    margin-bottom: 28px;
+    max-width: 550px;
+}
+
+/* 2. APA ITU ULTANGBER - 3 CARDS LAYOUT */
+.target-audience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 48px;
+}
+
+.target-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 40px 28px;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.target-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-xl);
+}
+
+.target-visual {
+    margin-bottom: 24px;
+}
+
+.target-icon {
+    font-size: 4rem;
+    line-height: 1;
+}
+
+.sdg-visual {
+    display: flex;
+    justify-content: center;
+}
+
+.sdg-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.target-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 16px;
+}
+
+.target-desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(0,0,0,0.7);
+}
+
+/* 3. COMPONENTS - 5 ITEMS GRID */
+.komponen-grid-5 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: 48px;
+}
+
+.komponen-grid-5 .komponen-card:nth-child(4),
+.komponen-grid-5 .komponen-card:nth-child(5) {
+    grid-column: span 1;
+}
+
+.komp-board {
+    aspect-ratio: 21 / 29.7; /* A2 ratio */
+}
+
+.dice-tokens-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 4rem;
+}
+
+.cost-info {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    box-shadow: var(--shadow-md);
+    border: 3px solid var(--yellow);
+}
+
+.cost-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--navy);
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.cost-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.cost-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: var(--lightgray);
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+}
+
+.cost-item strong {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+.cost-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: var(--navy);
+    color: white;
+    border-radius: var(--radius-md);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* 4. WEB APP - ENHANCED LAYOUT */
+.webapp-showcase {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.webapp-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--yellow);
+    color: var(--black);
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.webapp-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.webapp-desc {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: rgba(0,0,0,0.75);
+    margin-bottom: 32px;
+}
+
+.webapp-features {
+    display: grid;
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.webapp-feature-item {
+    display: flex;
+    gap: 16px;
+    align-items: start;
+    padding: 16px;
+    background: var(--lightgray);
+    border-radius: var(--radius-md);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.feature-text strong {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+}
+
+.feature-text span {
+    font-size: 0.9rem;
+    color: rgba(0,0,0,0.7);
+    line-height: 1.6;
+}
+
+.webapp-links {
+    display: flex;
+    gap: 16px;
+}
+
+.webapp-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.webapp-link-btn.landing {
+    background: var(--navy);
+    color: white;
+}
+
+.webapp-link-btn.play {
+    background: var(--red);
+    color: white;
+}
+
+.webapp-link-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.mockup-device {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+}
+
+.mockup-play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mockup-device:hover .mockup-play-overlay {
+    opacity: 0.9;
+}
+
+/* 5. EFFECTIVENESS - PROGRESS BARS */
+.effectiveness-results {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-bottom: 48px;
+}
+
+.result-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    box-shadow: var(--shadow-sm);
+}
+
+.result-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+.result-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 20px;
+}
+
+.result-bar {
+    width: 100%;
+    height: 40px;
+    background: var(--lightgray);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.result-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--green), var(--blue));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: width 1s ease;
+}
+
+.result-note {
+    font-size: 0.9rem;
+    color: rgba(0,0,0,0.7);
+    line-height: 1.6;
+}
+
+.effectiveness-summary {
+    background: var(--lightgray);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    display: flex;
+    gap: 24px;
+}
+
+.summary-icon {
+    font-size: 3rem;
+    color: var(--navy);
+}
+
+/* 6. MOBILE-FRIENDLY CARDS */
+.testimoni-grid-mobile,
+.team-grid-mobile {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+@media (max-width: 1023px) {
+    .testimoni-grid-mobile,
+    .team-grid-mobile {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .testimoni-grid-mobile,
+    .team-grid-mobile {
+        grid-template-columns: 1fr;
+    }
+}
+
+.teacher-avatar {
+    background: var(--red) !important;
+}
+
+.leader-avatar {
+    background: var(--green) !important;
+}
+
+/* 7. GALLERY - NO CAPTIONS */
+.galeri-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.galeri-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.galeri-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+/* NO captions - removed .galeri-caption */
+
+/* 8. FOOTER - GRADIENT */
+footer {
+    position: relative;
+    color: white;
+    padding: 60px 0 0;
+    overflow: hidden;
+}
+
+.footer-gradient-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        #FFE5B4 0%,
+        #FFD1DC 25%,
+        #E6E6FA 50%,
+        #B0E0E6 75%,
+        #F0E68C 100%
+    );
+    opacity: 0.15;
+    z-index: 0;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--navy);
+    z-index: 0;
+}
+
+footer .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* 9. RESPONSIVE IMPROVEMENTS */
+@media (max-width: 1023px) {
+    .hero-inner {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-text {
+        text-align: center;
+    }
+    
+    .hero-visual {
+        order: -1;
+    }
+    
+    .target-audience-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .komponen-grid-5 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .webapp-showcase {
+        grid-template-columns: 1fr;
+    }
+    
+    .effectiveness-results {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+    .komponen-grid-5,
+    .cost-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .webapp-links {
+        flex-direction: column;
+    }
+    
+    .webapp-link-btn {
+        width: 100%;
+        justify-content: center;
+    }
+       }
+
