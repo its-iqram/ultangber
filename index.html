@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ULTANGBER – Game On. Brain On.</title>
+    <meta name="description" content="ULTANGBER (Ular Tangga Berhalangan) — a gamified learning kit by SEMEKAP Innovation Team, SMK Apin-Apin. Available as a physical kit and web app.">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="ULTANGBER – Game On. Brain On.">
+    <meta property="og:description" content="A gamified learning tool that transforms traditional practice into an interactive and enjoyable gaming experience.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/logo.png">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -107,7 +116,12 @@
                 
                 <p class="hero-subtitle" data-lang-show="ms">Alat pembelajaran gamifikasi yang mengubah latihan tradisional menjadi pengalaman bermain yang interaktif dan menyeronokkan.</p>
                 <p class="hero-subtitle" data-lang-show="en">A gamified learning tool that transforms traditional practice into an interactive and enjoyable gaming experience.</p>
-                <ul class="hero-points">
+                <ul class="hero-points" data-lang-show="ms">
+    <li>✔ Pembelajaran gamifikasi terbukti meningkatkan penglibatan</li>
+    <li>✔ Digunakan oleh guru & pelajar</li>
+    <li>✔ Penyelesaian fizikal + berasaskan web</li>
+</ul>
+<ul class="hero-points" data-lang-show="en">
     <li>✔ Gamified learning proven to increase engagement</li>
     <li>✔ Used by teachers & students</li>
     <li>✔ Physical + Web-based solution</li>
@@ -177,7 +191,7 @@
 
             <div class="target-card sdg-card reveal">
                 <div class="target-visual sdg-visual">
-                    <img src="assets/sdg.png" alt="SDG 4 Quality Education" class="sdg-img"
+                    <img src="assets/sdg4.png" alt="SDG 4 Quality Education" class="sdg-img"
                          onerror="this.style.display='none'">
                 </div>
                 <h3 class="target-title">
@@ -202,7 +216,7 @@
         <div class="komponen-grid-5">
             <div class="komponen-card reveal">
                 <div class="komp-visual komp-board">
-                    <img src="assets/papan.png" alt="Challenge Board" 
+                    <img src="assets/papan.png" alt="Challenge Board" loading="lazy"
                          onerror="this.style.opacity='0.3'">
                 </div>
                 <div class="komp-info">
@@ -217,7 +231,7 @@
 
             <div class="komponen-card reveal">
                 <div class="komp-visual">
-                    <img src="assets/kad.png" alt="Challenge Cards" 
+                    <img src="assets/kad.png" alt="Challenge Cards" loading="lazy"
                          onerror="this.style.opacity='0.3'">
                 </div>
                 <div class="komp-info">
@@ -232,7 +246,7 @@
 
             <div class="komponen-card reveal">
                 <div class="komp-visual">
-                    <img src="assets/kad.png" alt="Power Cards" 
+                    <img src="assets/kad.png" alt="Power Cards" loading="lazy"
                          onerror="this.style.opacity='0.3'">
                 </div>
                 <div class="komp-info">
@@ -247,7 +261,7 @@
 
             <div class="komponen-card reveal">
                 <div class="komp-visual">
-                    <img src="assets/buku.png" alt="Guide Book" 
+                    <img src="assets/buku.png" alt="Guide Book" loading="lazy"
                          onerror="this.style.opacity='0.3'">
                 </div>
                 <div class="komp-info">
@@ -395,7 +409,7 @@
 
             <div class="webapp-mockup reveal">
                 <div class="mockup-device">
-                    <img src="assets/webapp.png" alt="ULTANGBER Web App Dashboard" 
+                    <img src="assets/webapp.png" alt="ULTANGBER Web App Dashboard" loading="lazy"
                          onerror="this.style.display='none'">
                     <a href="https://play-ultangber.vercel.app" target="_blank" class="mockup-play-overlay">
                         <i class="fas fa-play-circle"></i>
@@ -432,9 +446,9 @@
                 </h3>
                 <p class="dl-desc" data-lang-show="ms">Papan permainan A2 siap cetak (PDF)</p>
                 <p class="dl-desc" data-lang-show="en">A2 game board ready to print (PDF)</p>
-                <a href="assets/board.pdf" download class="dl-btn">
+                <a href="assets/downloads/papan-cabaran.pdf" download class="dl-btn">
                     <i class="fas fa-download"></i>
-                    <span>board.pdf</span>
+                    <span>papan-cabaran.pdf</span>
                 </a>
             </div>
 
@@ -446,9 +460,9 @@
                 </h3>
                 <p class="dl-desc" data-lang-show="ms">Template kad kuasa (PDF)</p>
                 <p class="dl-desc" data-lang-show="en">Power cards templates (PDF)</p>
-                <a href="assets/power.pdf" download class="dl-btn">
+                <a href="assets/downloads/kad-kuasa.pdf" download class="dl-btn">
                     <i class="fas fa-download"></i>
-                    <span>power.pdf</span>
+                    <span>kad-kuasa.pdf</span>
                 </a>
             </div>
 
@@ -460,9 +474,9 @@
                 </h3>
                 <p class="dl-desc" data-lang-show="ms">Panduan lengkap (PDF)</p>
                 <p class="dl-desc" data-lang-show="en">Complete guide (PDF)</p>
-                <a href="assets/guidebook.pdf" download class="dl-btn">
+                <a href="assets/downloads/buku-panduan.pdf" download class="dl-btn">
                     <i class="fas fa-download"></i>
-                    <span>guidebook.pdf</span>
+                    <span>buku-panduan.pdf</span>
                 </a>
             </div>
 
@@ -815,19 +829,19 @@
         </h2>
         <div class="galeri-masonry">
             <div class="galeri-item reveal">
-                <img src="assets/galeri-cf.jpg" alt="ULTANGBER in classroom" 
+                <img src="assets/galeri-cf.jpg" alt="ULTANGBER in classroom" loading="lazy"
                      onerror="this.parentElement.classList.add('galeri-empty')">
             </div>
             <div class="galeri-item reveal">
-                <img src="assets/galeri-fd.jpg" alt="Teacher with students" 
+                <img src="assets/galeri-fd.jpg" alt="Teacher with students" loading="lazy"
                      onerror="this.parentElement.classList.add('galeri-empty')">
             </div>
             <div class="galeri-item reveal">
-                <img src="assets/galeri-mf.jpg" alt="ULTANGBER components" 
+                <img src="assets/galeri-mf.jpg" alt="ULTANGBER components" loading="lazy"
                      onerror="this.parentElement.classList.add('galeri-empty')">
             </div>
             <div class="galeri-item reveal">
-                <img src="assets/galeri-pp.jpg" alt="Students playing" 
+                <img src="assets/galeri-pp.jpg" alt="Students playing" loading="lazy"
                      onerror="this.parentElement.classList.add('galeri-empty')">
             </div>
         </div>
